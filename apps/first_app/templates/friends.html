@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Friends</title>
+
+</head>
+<body>
+    <a href="/">Logout</a>
+    <h1>Hello, {{username}}</h1>
+    <h3>Here is the list of your friends:</h3>
+
+
+
+    <table style="width:100%">
+            <tr>
+              <th>Alias</th>
+              <th>Action</th> 
+            </tr>
+            <tr>
+              <td>Gracia</td>
+              <td> <a href="/user/1">View Profile</a> </td> 
+              <td> <a href="/friends">Remove as Friend</a> </td>
+            </tr>
+            <tr>
+              <td>{{username}}</td>
+              <td> <a href="/user/1">View Profile</a> </td> 
+              <td> <a href="/friends">Remove as Friend</a> </td>
+            </tr>
+            <tr>
+                 <td>Johnny</td>
+                <td> <a href="/user/1">View Profile</a> </td> 
+                <td> <a href="/friends">Remove as Friend</a> </td>
+            </tr>
+          </table>
+
+          <table style="width:100%">
+                <tr>
+                  <th>Alias</th>
+                  <th>Action</th> 
+                </tr>
+                <tr>
+                  <td> <a href="/otheruser/10"> {{username}}</a></td>
+                  <td> <input type="submit", name="add" value="Add as Friend" </td>
+                </tr>
+                <tr>
+                        <td> <a href="/otheruser/10"> Colin</a></td>
+                        <td> <input type="submit", name="add" value="Add as Friend" </td>
+                </tr>
+                {% for user in users %}
+                <tr>
+                    <td><a href="/friends"></a>{{first_name}} {{last_name}}</a></td>
+                    <td><a class="btn btn-default" href="/friends">Add Friend</a></td>
+                </tr>
+                {% endfor %}
+                <tr>
+                        <td> <a href="/otheruser/10"> Erica</a></td>
+                        <td> <input type="submit", name="add" value="Add as Friend" </td>
+                </tr>
+
+              </table>
+
+    
+</body>
+</html>
